@@ -17,7 +17,6 @@ Restituisce un dizionario del tipo titolo_brano: genere.
   n = int(input("Inserisci il numero di canzoni che vuoi nella nuova playlist "))
   for i in range(0, n):
    titolo_brano = input("Titolo della canzone ")
-
    genere = input("Genere musicale ")
    playlist[titolo_brano] = genere
   return playlist
@@ -53,7 +52,7 @@ def gestisci_genere(playlist, generi):
       break
     else:
       count = 0
-      print(f"Genere non presente. Riprovare.")
+      print("Genere non presente. Riprovare.")
       
 
 elenco = crea_playlist("Festa")
