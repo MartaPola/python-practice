@@ -31,7 +31,6 @@ La temperatura va memorizzata in un dizionario come valore con chiave il nome de
   d = {}
   for citta in l:
     t = random.randint(-5, 35)
-    print(f"La temperatura a {citta} è di {t}")
     d[citta] = t
   return d
   
@@ -45,19 +44,21 @@ Calcola e stampa la temperatura media dell'elenco delle città.
   for citta, t in d.items():
     s += t
     if t<=0:
-      print(f"{citta} oggi ha una meteo polare 🧊")
+      print(f"{citta} oggi ha una temperatura di {t}°C, meteo polare 🧊")
     elif t>0 and t<=7:
-      print(f"{citta} oggi ha una meteo freddo ❄️")
+      print(f"{citta} oggi ha una temperatura di {t}°C, meteo freddo ❄️")
     elif t>7 and t<= 13:
-      print(f"{citta} oggi ha una meteo fresco 🌬️")
+      print(f"{citta} oggi ha una temperatura di {t}°C, meteo fresco 🌬️")
     elif t>13 and t<=25:
-      print(f"{citta} oggi ha una meteo caldo 🥵")
+      print(f"{citta} oggi ha una temperatura di {t}°C, meteo caldo 🥵")
     elif t>25:
-      print(f"{citta} oggi ha una meteo caldo 🔥")
-
-
+      print(f"{citta} oggi ha una temperatura di {t}°C, meteo afa 🔥")
+  media = s / len(d)
+  return (f"La temperatura media oggi è di {media}°C")
+ 
 elenco = crea_luoghi()
+dizionario = elabora_meteo(elenco)
 print(elenco)
-print(elabora_meteo(elenco))
-print(stampa_meteo(elabora_meteo(elenco)))
+print(dizionario)
+print(stampa_meteo(dizionario))
             
