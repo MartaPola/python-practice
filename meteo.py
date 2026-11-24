@@ -7,7 +7,7 @@ Elaborazione del Meteo (5 punti)
 Stampa con calcolo finale (3 punti)
 """
 import random
-def crea_luoghi(n):
+def crea_luoghi():
   """
   Crea una funzione crea_luoghi che:
 Riceve come parametro un numero intero n.
@@ -34,14 +34,16 @@ La temperatura va memorizzata in un dizionario come valore con chiave il nome de
     print(f"La temperatura a {citta} è di {t}")
     d[citta] = t
   return d
-
+  
 def stampa_meteo (d):
-    """
-    Crea una funzione stampa_meteo che per ogni città presente nel dizionario ricevuto come parametro:
+  """
+  Crea una funzione stampa_meteo che per ogni città presente nel dizionario ricevuto come parametro:
 Visualizza a schermo il nome della città, la sua temperatura e una valutazione testuale a seconda di un range (polare, freddo, fresco, caldo, afa) con un'emoji collegata.
 Calcola e stampa la temperatura media dell'elenco delle città.
-    """
-  for i in range(len(d)):
+"""
+  s = 0
+  for citta, t in d.items():
+    s += t
     if t<=0:
       print(f"{citta} oggi ha una meteo polare 🧊")
     elif t>0 and t<=7:
@@ -50,10 +52,11 @@ Calcola e stampa la temperatura media dell'elenco delle città.
       print(f"{citta} oggi ha una meteo fresco 🌬️")
     elif t>13 and t<=25:
       print(f"{citta} oggi ha una meteo caldo 🥵")
-    else t>25:
+    elif t>25:
       print(f"{citta} oggi ha una meteo caldo 🔥")
 
-elenco = crea_luoghi(n)
+
+elenco = crea_luoghi()
 print(elenco)
 print(elabora_meteo(elenco))
 print(stampa_meteo(elabora_meteo(elenco)))
